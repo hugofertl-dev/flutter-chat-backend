@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken');
 
 const validarJWT = (req, res = response, next) => {
     //Leer el Token
+    console.log('Valida Token');
     const token = req.header('x-token');
 
     if  (!token) {

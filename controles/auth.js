@@ -97,9 +97,9 @@ const renewToken = async (req, res = response) => {
 
     const token = await generarJWT(uid);
 
-    const usuarioDB = await Usuario.findById(uid);
+    const usuario = await Usuario.findById(uid);
 
-    if (!usuarioDB) {
+    if (!usuario) {
         return res.status(400).json({
             ok: false,
             msg: 'Usuario no encontrado'
@@ -110,7 +110,7 @@ const renewToken = async (req, res = response) => {
 
     return res.json({
         ok: true,
-        usuarioDB,
+        usuario,
         token: token
     })
 

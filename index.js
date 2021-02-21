@@ -37,6 +37,8 @@ app.use(express.static(publicPath));
 
 //Mis Rutas
 app.use('/api/login', require('./routes/auth'));
+app.use('/api/usuarios', require('./routes/usuarios'));
+app.use('/api/mensajes', require('./routes/mensajes'));
 
 //Aca agrego un escucha del puerto 3000 y tomo el error y lo muestro en consola
 //un error puede ser el el puerto esta tomando
